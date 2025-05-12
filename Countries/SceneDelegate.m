@@ -6,6 +6,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "MainViewController.h"
 
 @interface SceneDelegate ()
 
@@ -18,6 +19,34 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+
+    // 1. Check if the scene is a UIWindowScene and cast it.
+    if (![scene isKindOfClass:[UIWindowScene class]]) {
+        return; // If it's not a UIWindowScene, we can't proceed.
+    }
+    UIWindowScene *windowScene = (UIWindowScene *)scene;
+
+    // 2. Create the UIWindow associated with the windowScene.
+    //    Note: The 'window' property should already be declared in SceneDelegate.h
+    //    @property (strong, nonatomic) UIWindow * window;
+    self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
+
+    // 3. Create an instance of your initial ViewController.
+    MainViewController *viewController = [[MainViewController alloc] init]; // Or initWithNibName:bundle: if needed
+
+    // --- Optional: Embed in a UINavigationController ---
+    // If you want your ViewController inside a Navigation Controller (very common):
+    // UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    // self.window.rootViewController = navController;
+    // ----------------------------------------------------
+
+    // --- If NOT using a Navigation Controller (as per your original Swift): ---
+    self.window.rootViewController = viewController;
+    // ----------------------------------------------------
+
+
+    // 5. Make the window key and visible.
+    [self.window makeKeyAndVisible];
 }
 
 
