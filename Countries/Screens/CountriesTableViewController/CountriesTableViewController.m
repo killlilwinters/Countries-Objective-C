@@ -15,7 +15,7 @@
 
 @implementation CountriesTableViewController
 
-- (instancetype)initWithNetworkManager:(NetworkManager *)networkManager
+- (instancetype)initWithNetworkManager:(NewNetworkManager *)networkManager
                       countiesInRegion:(WorldRegion) region {
     self = [super init];
     self.networkManager = networkManager;
@@ -63,7 +63,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CountryNameCell" forIndexPath:indexPath];
     
     // Cell configuration
-    cell.textLabel.text = self.countries[indexPath.row].commonName;
+    NameOnlyCountry *country = self.countries[indexPath.row];
+    cell.textLabel.text = country.commonName;
     
     return cell;
 }

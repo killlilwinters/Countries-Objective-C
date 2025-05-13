@@ -12,14 +12,14 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum WorldRegion: NSUInteger {
+typedef NS_ENUM(NSUInteger, WorldRegion) {
     WorldRegionAntarctic,
     WorldRegionAfrica,
     WorldRegionAmericas,
     WorldRegionAsia,
     WorldRegionEurope,
     WorldRegionOceania
-} WorldRegion;
+};
 
 
 static inline NSString * _Nonnull NSStringFromWorldRegion(WorldRegion region) {

@@ -15,7 +15,7 @@ typedef void (^FetchCompletionBlock)(NSArray<NameOnlyCountry *> * _Nullable coun
 
 @interface NetworkManager : NSObject
 
-@property (nonatomic, strong, nonnull, retain) NSString * baseAPIEndpoint;
+@property (nonatomic, strong, retain) NSString * baseAPIEndpoint;
 
 - (void)sendRequestForCountriesForWorldRegion: (enum WorldRegion)region
                             completionHandler: (FetchCompletionBlock)completion;

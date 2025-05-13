@@ -6,11 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NetworkManager.h"
+#import "Countries-Swift.h"
 
 @interface MainViewController : UIViewController
 
-@property (strong, nonnull) NetworkManager * networkManager;
+//@property (strong, nonnull) NetworkManager * networkManager;
+@property (strong, nonnull) NewNetworkManager * networkManager;
 @property (nonnull) UILabel * label;
 @property (nonnull) UIButton * updateButton;
 

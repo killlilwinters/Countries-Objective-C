@@ -14,7 +14,7 @@
 - (instancetype)init {
     self = [super init];
     // Network
-    self.networkManager = [[NetworkManager alloc] init];
+    self.networkManager = [[NewNetworkManager alloc] init];
     // UI
     self.label = [[UILabel alloc] init];
     self.updateButton = [UIButton buttonWithType: UIButtonTypeSystem];
