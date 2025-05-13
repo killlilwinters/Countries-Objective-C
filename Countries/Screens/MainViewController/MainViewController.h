@@ -6,9 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetworkManager.h"
 
 @interface MainViewController : UIViewController
 
+@property (strong, nonnull) NetworkManager * networkManager;
 @property (nonnull) UILabel * label;
 @property (nonnull) UIButton * updateButton;
 
