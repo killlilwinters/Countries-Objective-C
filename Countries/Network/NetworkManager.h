@@ -6,10 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WorldRegionEnum.h"
+#import "NameOnlyCountry.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^FetchCompletionBlock)(NSArray<NameOnlyCountry *> * _Nullable countries, NSError * _Nullable error);
+
 @interface NetworkManager : NSObject
+
+@property (nonatomic, strong, nonnull, retain) NSString * baseAPIEndpoint;
+
+- (void)sendRequestForCountriesForWorldRegion: (enum WorldRegion)region
+                            completionHandler: (FetchCompletionBlock)completion;
 
 @end
 

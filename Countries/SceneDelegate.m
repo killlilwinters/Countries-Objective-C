@@ -36,12 +36,12 @@
 
     // --- Optional: Embed in a UINavigationController ---
     // If you want your ViewController inside a Navigation Controller (very common):
-    // UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    // self.window.rootViewController = navController;
+     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+     self.window.rootViewController = navController;
     // ----------------------------------------------------
 
     // --- If NOT using a Navigation Controller (as per your original Swift): ---
-    self.window.rootViewController = viewController;
+//    self.window.rootViewController = viewController;
     // ----------------------------------------------------
 
 

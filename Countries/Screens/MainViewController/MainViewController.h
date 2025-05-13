@@ -14,5 +14,8 @@
 @property (nonnull) UILabel * label;
 @property (nonnull) UIButton * updateButton;
 
+@property (nonnull) UIButton * pushEuropeButton;
+@property (nonnull) UIButton * pushAmericasButton;
+
 @end
 
